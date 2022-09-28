@@ -9,31 +9,25 @@ const typeDefs = gql`
   # Schema definitions go here
   type Query {
     "Get non-nullable tracks array for homepage grid"
-    tracksForHome: [Track!]!
+    spaceCats: [SpaceCat]
   }
 
-  "A track is a group of Modules that teaches about a specific topic"
-  type Track {
+  "A track is a group of Modules that teaches about a specific topic, in PascalCase"
+  type SpaceCat {
     id: ID!
     "The track's title"
-    title: String!
-    "The track's main author"
-    author: Author!
-    "The track's main illustration to display in track card or track page detail"
-    thumbnail: String
-    "The track's approximate length to complete, in minutes"
-    length: Int
-    "The number of modules this track contains"
-    modulesCount: Int
+    name: String!
+    age: Int
+    "The track's missions"
+    missions: [Mission]
   }
 
-  "Author of a complete Track"
-  type Author {
+  "missions of a complete Track"
+  type Mission {
     id: ID!
-    "Author's first and last name"
+    "missions name"
     name: String!
-    "Author's profile picture url"
-    photo: String
+    description: String!
   }
 `
 module.exports = typeDefs
