@@ -8,26 +8,32 @@ const { gql } = require("apollo-server")
 const typeDefs = gql`
   # Schema definitions go here
   type Query {
-    "Get non-nullable tracks array for homepage grid"
-    spaceCats: [SpaceCat]
+    "Get tracks array for homepage grid"
+    tracksForHome: [Track!]!
   }
 
-  "A track is a group of Modules that teaches about a specific topic, in PascalCase"
-  type SpaceCat {
+  "A track is a group of Modules that teaches about a specific topic"
+  type Track {
     id: ID!
     "The track's title"
-    name: String!
-    age: Int
-    "The track's missions"
-    missions: [Mission]
+    title: String!
+    "The track's main author"
+    author: Author!
+    "The track's main illustration to display in track card or track page detail"
+    thumbnail: String
+    "The track's approximate length to complete, in minutes"
+    length: Int
+    "The number of modules this track contains"
+    modulesCount: Int
   }
 
-  "missions of a complete Track"
-  type Mission {
+  "Author of a complete Track"
+  type Author {
     id: ID!
-    "missions name"
+    "Author's first and last name"
     name: String!
-    description: String!
+    "Author's profile picture url"
+    photo: String
   }
 `
 module.exports = typeDefs
