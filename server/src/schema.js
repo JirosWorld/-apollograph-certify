@@ -1,14 +1,8 @@
-// first we need to install 2 dependencies INSIDE the Server dir:
-/* graphql will help us navigate through the Nodes and Edges of the data graph
-= core logic for parsing and validating GraphQL queries
-Apollo will give us the template literal gql syntax */
-
-const { gql } = require("apollo-server")
+const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-  # Schema definitions go here
   type Query {
-    "Get tracks array for homepage grid"
+    "Query to get tracks array for the homepage grid"
     tracksForHome: [Track!]!
   }
 
@@ -17,9 +11,9 @@ const typeDefs = gql`
     id: ID!
     "The track's title"
     title: String!
-    "The track's main author"
+    "The track's main Author"
     author: Author!
-    "The track's main illustration to display in track card or track page detail"
+    "The track's illustration to display in track card or track page detail"
     thumbnail: String
     "The track's approximate length to complete, in minutes"
     length: Int
@@ -27,13 +21,14 @@ const typeDefs = gql`
     modulesCount: Int
   }
 
-  "Author of a complete Track"
+  "Author of a complete Track or a Module"
   type Author {
     id: ID!
     "Author's first and last name"
     name: String!
-    "Author's profile picture url"
+    "Author's profile picture"
     photo: String
   }
-`
-module.exports = typeDefs
+`;
+
+module.exports = typeDefs;
