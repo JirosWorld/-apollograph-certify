@@ -29,6 +29,11 @@ In another Terminal window,
 
 This will open up `localhost:3000` in your web browser.
 
+# Lift-off 2: Resolvers
+
+endpoints:
+https://odyssey-lift-off-rest-api.herokuapp.com/docs/
+
 ## Getting Help
 
 For any issues or problems concerning the course content, please refer to the [Odyssey topic in our community forums](https://community.apollographql.com/tags/c/help/6/odyssey).
