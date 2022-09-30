@@ -34,6 +34,10 @@ const resolvers = {
       return dataSources.trackAPI.getAuthor(authorId)
       // highlight-end
     },
+    // CHAINING: create a resolver for Track.modules
+    modules: ({ id }, _, { dataSources }) => {
+      return dataSources.trackAPI.getTrackModules(id)
+    },
   },
 }
 
