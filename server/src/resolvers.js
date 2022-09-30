@@ -8,8 +8,21 @@ const resolvers = {
     tracksForHome: (_, __, { dataSources }) => {
       return dataSources.trackAPI.getTracksForHome()
     },
+    /* "For the fun of comparing, here is the fetch implementation below. 
+    Added a new field called tracksforHomeFetch to our schema first. This resolver uses node-fetch instead of the RESTDataSource, 
+    for each call, the response takes the same amount of time, about half a second."  */
+    // tracksForHomeFetch: async () => {
+    //   const baseUrl = "https://odyssey-lift-off-rest-api.herokuapp.com"
+    //   const res = await fetch(`${baseUrl}/tracks`)
+    //   return res.json()
+    // },
   },
   Track: {
+    // using fetch instead of dataSources
+    // author: async ({ authorId }, _, { dataSources }) => {
+    //     const baseUrl = "https://odyssey-lift-off-rest-api.herokuapp.com";
+    //     const res = await fetch(`${baseUrl}/author/${authorId}`);
+    //     return res.json();
     // highlight-start
     author: ({ authorId }, _, { dataSources }) => {
       return dataSources.trackAPI.getAuthor(authorId)
