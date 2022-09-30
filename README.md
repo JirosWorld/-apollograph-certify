@@ -34,6 +34,10 @@ This will open up `localhost:3000` in your web browser.
 endpoints:
 https://odyssey-lift-off-rest-api.herokuapp.com/docs/
 
+# Lift-off 3: Arguments
+
+git clone https://github.com/apollographql/odyssey-lift-off-part3
+
 ## Getting Help
 
 For any issues or problems concerning the course content, please refer to the [Odyssey topic in our community forums](https://community.apollographql.com/tags/c/help/6/odyssey).
