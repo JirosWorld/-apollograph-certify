@@ -1,4 +1,6 @@
 // Our resolvers object's keys will correspond to our schema's types and fields.
+// a resolver looks like this:
+// /* (parent, args, context, info) => {} */
 
 const resolvers = {
   Query: {
