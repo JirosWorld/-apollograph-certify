@@ -10,6 +10,10 @@ const resolvers = {
     tracksForHome: (_, __, { dataSources }) => {
       return dataSources.trackAPI.getTracksForHome()
     },
+    // In our schema, we named the fieldtrack, so here it has to have the same name.
+    track: (parent, { id }, { dataSources }, info) => {
+      return dataSources.trackAPI.getTrack(id)
+    },
     /* "For the fun of comparing, here is the fetch implementation below. 
     Added a new field called tracksforHomeFetch to our schema first. This resolver uses node-fetch instead of the RESTDataSource, 
     for each call, the response takes the same amount of time, about half a second."  */
