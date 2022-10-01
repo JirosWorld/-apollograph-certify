@@ -5,6 +5,7 @@ import Pages from './pages';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
+  // the location of our GraphQL server.
   uri: 'http://localhost:4000',
   cache: new InMemoryCache(),
 });
