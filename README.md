@@ -38,6 +38,10 @@ https://odyssey-lift-off-rest-api.herokuapp.com/docs/
 
 git clone https://github.com/apollographql/odyssey-lift-off-part3
 
+# Project Lab: add link to modules
+
+https://www.apollographql.com/tutorials/lift-off-lab/project-setup
+
 ## Getting Help
 
 For any issues or problems concerning the course content, please refer to the [Odyssey topic in our community forums](https://community.apollographql.com/tags/c/help/6/odyssey).
